@@ -1,38 +1,185 @@
-.App {
+/* Set background color and text color for the entire body */
+body {
+  background-color: black; /* Background color */
+  color: white; /* Text color */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* Center-align text in <h1> tags */
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Styling for the main todo wrapper */
+.todo-wrapper {
+  background: rgb(9, 8, 8); /* Background color */
+  padding: 2%; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  width: fit-content; /* Width based on content */
+  margin-left: auto; /* Auto margin to center horizontally */
+  margin-right: auto; /* Auto margin to center horizontally */
+  margin-top: 3%; /* Top margin */
+  max-height: 80vh; /* Maximum height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0px 5px 7px rgb(27, 27, 27); /* Box shadow */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Styling for the input section */
+.todo-input {
+  display: flex; /* Flex display */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center justify content */
+  border-bottom: 1px solid rgb(78, 78, 78); /* Bottom border */
+  padding-bottom: 25px; /* Padding bottom */
+  margin-bottom: 25px; /* Margin bottom */
+}
+
+/* Styling for todo input items */
+.todo-input-item {
+  display: flex; /* Flex display */
+  flex-direction: column; /* Column layout */
+  align-items: flex-start; /* Align items to the start */
+  margin-right: 25px; /* Right margin */
+}
+
+/* Styling for input labels */
+.todo-input-item label {
+  font-weight: bold; /* Bold font weight */
+  margin-bottom: 10px; /* Margin bottom */
+}
+
+/* Styling for input fields */
+.todo-input-item input {
+  padding: 8px; /* Padding */
+  border: none; /* No border */
+  width: 250px; /* Width */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Styling for input fields when focused */
+.todo-input-item input:focus {
+  outline: 2px solid rgb(0, 230, 122); /* Outline when focused */
+}
+
+/* Primary button styling */
+.primaryBtn {
+  background-color: rgb(0, 230, 122); /* Background color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding */
+  width: 60px; /* Width */
+  cursor: pointer; /* Cursor */
+}
+
+/* Hover effect for primary button */
+.primaryBtn:hover {
+  background-color: rgb(4, 196, 106); /* Background color on hover */
+}
+
+/* Secondary button styling */
+.secondaryBtn {
+  background-color: rgb(71, 71, 71); /* Background color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 3px; /* Rounded corners */
+  padding: 10px; /* Padding */
+  width: fit-content; /* Width based on content */
+  cursor: pointer; /* Cursor */
+}
+
+/* Active state for secondary button */
+.active {
+  background-color: rgb(0, 230, 122); /* Background color */
+}
+
+/* Styling for the todo list */
+.todo-list {
+  display: flex; /* Flex display */
+  flex-direction: column; /* Column layout */
+}
+
+/* Button area styling */
+.btn-area {
+  margin-bottom: 15px; /* Margin bottom */
+}
+
+/* Styling for todo list items */
+.todo-list-item {
+  background-color: #414040; /* Background color */
+  display: flex; /* Flex display */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Align items vertically */
+  padding: 25px; /* Padding */
+  padding-bottom: 10px; /* Padding bottom */
+  padding-top: 10px; /* Padding top */
+  margin-bottom: 10px; /* Margin bottom */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0px 3px 5px rgb(43, 42, 42); /* Box shadow */
+}
+
+/* Styling for todo list item titles */
+.todo-list-item h3 {
+  font-size: 25px; /* Font size */
+  color: rgb(0, 230, 122); /* Text color */
+  font-weight: bold; /* Bold font weight */
+  margin: 0; /* Margin */
+}
+
+/* Styling for todo list item descriptions */
+.todo-list-item p {
+  font-size: 14px; /* Font size */
+  color: rgb(161, 161, 161); /* Text color */
+  margin-top: 8px; /* Margin top */
+}
+
+/* Styling for icons */
+.icon {
+  font-size: 35px; /* Font size */
+  cursor: pointer; /* Cursor */
+}
+
+/* Hover effect for icons */
+.icon:hover {
+  color: red; /* Color on hover */
+}
+
+/* Styling for check icons */
+.check-icon {
+  font-size: 40px; /* Font size */
+  margin-left: 10px; /* Margin left */
+  color: rgb(0, 230, 122); /* Text color */
+  cursor: pointer; /* Cursor */
+}
+
+/* Hover effect for check icons */
+.check-icon:hover {
+  color: rgb(4, 196, 106); /* Color on hover */
+}
+
+/* Media query for tablets and small desktops */
+@media (max-width: 768px) {
+  .todo-wrapper {
+    width: 90%; /* Width */
+    margin: 0 auto; /* Auto margin */
+  }
+
+  .todo-input {
+    flex-direction: column; /* Column layout */
+  }
+
+  .btn-area {
+    flex-direction: column; /* Column layout */
+  }
+
+  .todo-list-item {
+    flex-direction: column; /* Column layout */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  .todo-input {
+    width: 100%; /* Full width */
   }
 }
